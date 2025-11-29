@@ -1,0 +1,21 @@
+TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME,CONSTRAINT_TYPE,REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+gym_db1,equipment,gymId,equipment_ibfk_1,"FOREIGN KEY",gyms,id
+gym_db1,expenses,trainer_id,expenses_ibfk_1,"FOREIGN KEY",trainers,id
+gym_db1,expenses,revenue_id,expenses_ibfk_2,"FOREIGN KEY",revenues,id
+gym_db1,expenses,equipment_id,expenses_ibfk_3,"FOREIGN KEY",equipment,id
+gym_db1,expenses,gymId,expenses_ibfk_4,"FOREIGN KEY",gyms,id
+gym_db1,member_subscriptions,memberId,member_subscriptions_ibfk_1,"FOREIGN KEY",members,id
+gym_db1,member_subscriptions,membershipId,member_subscriptions_ibfk_2,"FOREIGN KEY",memberships,id
+gym_db1,members,gymId,members_ibfk_1,"FOREIGN KEY",gyms,id
+gym_db1,memberships,gymId,memberships_ibfk_1,"FOREIGN KEY",gyms,id
+gym_db1,memberships,trainer_id,memberships_ibfk_2,"FOREIGN KEY",trainers,id
+gym_db1,pt_commission_settings,trainer_id,pt_commission_settings_ibfk_1,"FOREIGN KEY",trainers,id
+gym_db1,pt_commission_settings,membership_id,pt_commission_settings_ibfk_2,"FOREIGN KEY",memberships,id
+gym_db1,pt_commission_settings,gymId,pt_commission_settings_ibfk_3,"FOREIGN KEY",gyms,id
+gym_db1,revenues,member_id,revenues_ibfk_1,"FOREIGN KEY",members,id
+gym_db1,revenues,membership_id,revenues_ibfk_2,"FOREIGN KEY",memberships,id
+gym_db1,revenues,subscription_id,revenues_ibfk_3,"FOREIGN KEY",member_subscriptions,id
+gym_db1,revenues,gymId,revenues_ibfk_4,"FOREIGN KEY",gyms,id
+gym_db1,trainers,gymId,trainers_ibfk_1,"FOREIGN KEY",gyms,id
+gym_db1,transactions,gymId,transactions_ibfk_1,"FOREIGN KEY",gyms,id
+gym_db1,transactions,subscriptionId,transactions_ibfk_2,"FOREIGN KEY",member_subscriptions,id

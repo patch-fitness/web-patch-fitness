@@ -1,0 +1,171 @@
+@import './styles/design-system.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== Base Layer Overrides ========== */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+/* ========== Component Layer ========== */
+@layer components {
+  /* Page Container */
+  .page-container {
+    @apply min-h-screen p-6 lg:p-8 transition-colors duration-300;
+  }
+  
+  /* Page Header */
+  .page-header {
+    @apply mb-8;
+  }
+  
+  .page-title {
+    @apply text-3xl lg:text-4xl font-bold mb-2 transition-colors;
+  }
+  
+  .page-subtitle {
+    @apply text-lg transition-colors;
+  }
+  
+  /* Action Bar */
+  .action-bar {
+    @apply flex flex-wrap items-center gap-3 p-4 rounded-2xl mb-6 transition-colors;
+  }
+  
+  /* Action Button */
+  .action-btn {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm
+           transition-all duration-200 cursor-pointer;
+  }
+  
+  /* Search Input */
+  .search-input {
+    @apply w-full max-w-xs px-4 py-2.5 rounded-xl text-sm transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary-500/30;
+  }
+  
+  /* Card Grid */
+  .card-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6;
+  }
+  
+  /* Stats Bar */
+  .stats-bar {
+    @apply flex flex-wrap items-center justify-between gap-4 mb-6;
+  }
+  
+  /* Pagination */
+  .pagination-btn {
+    @apply w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  /* Empty State */
+  .empty-state {
+    @apply col-span-full flex flex-col items-center justify-center py-16 text-center;
+  }
+  
+  /* Loading State */
+  .loading-state {
+    @apply col-span-full flex items-center justify-center py-16;
+  }
+}
+
+/* ========== Utility Layer ========== */
+@layer utilities {
+  /* Text colors for light/dark mode */
+  .text-theme-primary {
+    @apply text-stone-900 dark:text-stone-50;
+  }
+  
+  .text-theme-secondary {
+    @apply text-stone-600 dark:text-stone-300;
+  }
+  
+  .text-theme-tertiary {
+    @apply text-stone-500 dark:text-stone-400;
+  }
+  
+  .text-theme-muted {
+    @apply text-stone-400 dark:text-stone-500;
+  }
+  
+  /* Background colors for light/dark mode */
+  .bg-theme-primary {
+    @apply bg-white dark:bg-stone-900;
+  }
+  
+  .bg-theme-secondary {
+    @apply bg-stone-50 dark:bg-stone-800;
+  }
+  
+  .bg-theme-tertiary {
+    @apply bg-stone-100 dark:bg-stone-700;
+  }
+  
+  .bg-theme-card {
+    @apply bg-white dark:bg-stone-800/80;
+  }
+  
+  .bg-theme-hover {
+    @apply hover:bg-stone-100 dark:hover:bg-stone-700;
+  }
+  
+  /* Border colors for light/dark mode */
+  .border-theme {
+    @apply border-stone-200 dark:border-stone-700;
+  }
+  
+  .border-theme-light {
+    @apply border-stone-100 dark:border-stone-800;
+  }
+  
+  /* Gradient backgrounds */
+  .bg-page-light {
+    @apply bg-gradient-to-br from-stone-50 via-primary-50/30 to-stone-100;
+  }
+  
+  .bg-page-dark {
+    @apply bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950;
+  }
+  
+  /* Glass effect */
+  .glass-light {
+    @apply bg-white/70 backdrop-blur-xl border border-white/50;
+  }
+  
+  .glass-dark {
+    @apply bg-stone-900/70 backdrop-blur-xl border border-stone-700/50;
+  }
+}
+
+/* ========== Legacy Support (for components not yet migrated) ========== */
+.glass-card {
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.gradient-bg {
+  min-height: 100vh;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .glass-effect,
+.dark .glass-effect {
+  background: rgba(28, 25, 23, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
